@@ -1,0 +1,15 @@
+{
+  "name": "my-translate",
+  "version": "1.0.0",
+  "description": "用于收集整理学习过程中翻译的文章",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./lib/build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "markdown-styles": "^3.1.10"
+  }
+}

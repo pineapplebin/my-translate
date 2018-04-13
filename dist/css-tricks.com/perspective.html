@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>[Perspective](https://css-tricks.com/almanac/properties/p/perspective/)</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><!-- 
+source: https://css-tricks.com/almanac/properties/p/perspective/
+-->
+<h1 id="[perspective](https://css-tricks.com/almanac/properties/p/perspective/)"><a href="https://css-tricks.com/almanac/properties/p/perspective/">Perspective</a></h1>
+<p>CSS属性<code>perspective</code>通过改变Z面和用户的距离来给元素作出位于一个三维空间的效果。</p>
+<p>展示的效果是由该属性的值所决定。给的值越小，则视角离Z面越近，而且视觉效果越明显。给的值越大，则视觉效果越不明显。</p>
+<p><strong>重要：</strong>注意perspective属性不会影响元素的渲染，只是会给其子元素启用三维空间。这是<code>transform: perspective()</code>和<code>perspective属性</code>之间的主要区别。The first gives element depth while the later creates a 3D-space shared by all its transformed children.</p>
+<pre class="hljs"><code><span class="hljs-comment">/**
+ * Syntax
+ * perspective: none | &lt;length&gt;
+ */</span>
+<span class="hljs-selector-class">.parent</span> {
+    <span class="hljs-attribute">perspective</span>: <span class="hljs-number">1000px</span>;
+}
+<span class="hljs-selector-class">.child</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotateY</span>(50deg);
+}</code></pre><hr/>
+
+<p>示例: <a href="https://codepen.io/HugoGiraudel/pen/JImvb">click</a></p>
+<p>上面示例展示了函数与属性的不同：</p>
+<ul class="list">
+<li>左边部分，能看到是在父元素中应用了属性(<code>perspective: 50em</code>)，和子元素应用了(<code>transform: rotateY(50deg)</code>)</li>
+<li>右边部分中，perspective则是通过直接在子元素的transform中应用(<code>transform: perspective(50em) rotateY(50deg)</code>)</li>
+</ul>
+<p>这展示了通过在父元素中设置perspective，使得所有的子元素位于同一个三维空间达到拥有同一个消失点。</p>
+<hr/>
+
+<p>下面来尝试一些更炫酷的效果，一个拥有3D效果和透视的方块。</p>
+<p>示例: <a href="https://codepen.io/HugoGiraudel/pen/GLbca">click</a></p>
+<p>方块的实现是：依靠了两个嵌套的容器（其中一个给方块提供了透视，另一个则包含了所有的面）和六个元素作为方块的面。每个元素在三维空间中被设置了包含<code>translate</code>和<code>rotate</code>的<code>transform</code>（例如：<code>transform: rotateX(90deg) translateZ(1em)</code>）</p>
+<hr/>
+
+<p>让我们以一个基于现实场景的示例来结束吧：以透视和变换实现的一堵拥有图片和文字的墙</p>
+<p>示例: <a href="https://codepen.io/HugoGiraudel/pen/fvopl">click</a></p>
+<p>当光标回到墙体时，子元素会旋转回正常位置，并且取消效果。</p>
+<p><strong>重要：</strong>使用了一个值不为<em>0</em>或<em>none</em>的<code>perspective</code>会产生一个新的层叠上下文。</p>
+<h2 id="关联属性">关联属性</h2>
+<ul class="list">
+<li><a href="http://css-tricks.com/almanac/properties/p/perspective-origin/">perspective-origin</a></li>
+</ul>
+    </article>
+  </body>
+</html>
