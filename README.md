@@ -6,3 +6,4 @@
 ## 文章来源
 - [css-tricks](https://css-tricks.com/)
 - [Reginald Braithwaite](http://raganwald.com/)
+- [ECAMScript 2016 Language Specification (7th Edition)](http://www.ecma-international.org/ecma-262/7.0/)
